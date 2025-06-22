@@ -42,13 +42,14 @@ nav {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
+  padding: 0 2vw;
 }
 
 nav a {
   text-decoration: none;
   color: #1E00FF;
   font-weight: 300;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   letter-spacing: 0.1em;
   font-family: 'AkzidenzGrotesk-Regular', Arial, sans-serif;
 }
@@ -106,8 +107,8 @@ nav a:hover {
 
 .hero-top {
   text-align: left;
-  padding-left: 8vw;
-  font-size: 11vw;
+  padding-left: 4vw;
+  font-size: 12vw;
   font-family: 'AkzidenzGrotesk-Regular', Arial, sans-serif;
   font-weight: 300;
   letter-spacing: 0 em;
@@ -122,30 +123,32 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-left: 8vw;
+  padding-left: 4vw;
   gap: 0;
 }
 
 .hero-right {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  padding-right: 8vw;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 4vw;
   gap: 0;
 }
 
-.hero-row {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  width: 100%;
-  gap: 0.01vw; /* ainda menor */
+.hero-line {
+  height: 10px;
+  background: #1E00FF;
+  border-radius: 1px;
+  opacity: 0.7;
+  margin-right: 2vw;
+  min-width: 450px;
+  width: 12vw;
+  margin-left: 4vw;
+  pointer-events: none;
 }
 
 .hero-word {
-  font-size: 11vw;
+  font-size: 12vw;
   font-family: 'AkzidenzGrotesk-Regular', Arial, sans-serif;
   font-weight: 300;
   letter-spacing: 0 em;
@@ -172,12 +175,4 @@ nav a:hover {
     align-items: center;
     padding: 0;
   }
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  color: #1E00FF;
-  font-weight: 300;
 }
