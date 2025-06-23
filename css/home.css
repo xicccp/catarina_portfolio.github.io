@@ -23,6 +23,12 @@ body {
   color: #1E00FF;
 }
 
+body, .hero-stack, .hero-word, .hero-top, nav, header {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
 header {
   width: 100%;
   padding: 2rem 4vw 1rem 4vw;
@@ -55,7 +61,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #84FF00;
+  color: #2C9CDD;
 }
 
 .gallery {
@@ -71,6 +77,16 @@ nav a:hover {
   width: 100%;
   display: block;
   border-radius: 4px;
+}
+
+#brush-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .bg-video {
@@ -175,4 +191,9 @@ nav a:hover {
     align-items: center;
     padding: 0;
   }
+}
+
+header, main {
+  position: relative;
+  z-index: 1;
 }
