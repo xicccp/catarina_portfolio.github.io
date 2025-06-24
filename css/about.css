@@ -57,7 +57,7 @@ nav a {
   text-decoration: none;
   color: #EBFF66;
   font-weight: 300;
-  font-size: 1.8rem;
+  font-size: min(3vw, 3vh);
   letter-spacing: 0.1em;
   font-family: 'AkzidenzGrotesk-Regular', Arial, sans-serif;
   transition: color 0.2s;
@@ -109,7 +109,7 @@ nav a:hover {
 .hero-top {
   text-align: left;
   padding-left: 4vw;
-  font-size: 12vw;
+  font-size: min(24vw, 24vh);
   font-family: 'AkzidenzGrotesk-Regular', Arial, sans-serif;
   font-weight: 300;
   letter-spacing: 0em;
@@ -134,7 +134,7 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   justify-content: stretch;
-  font-size: 1.2rem;
+  font-size: min(2vw, 2vh);
   color: #EBFF66;
   min-width: 0;
   background: none;

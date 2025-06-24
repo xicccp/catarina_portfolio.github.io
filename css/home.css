@@ -154,7 +154,7 @@ nav a:hover {
 .hero-right {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;   /* <-- Alinha verticalmente ao centro */
   justify-content: flex-end;
   padding-right: 0;
   width: 100%;
@@ -162,18 +162,17 @@ nav a:hover {
 }
 
 .hero-line {
-  position: absolute;
-  left: 4vw;
-  right: calc(4vw + 100% - 4vw - min(50vw, 50vh) - 4vw); /* Garante que termina antes do PORTFOLIO */
-  top: 50%;
-  transform: translateY(-50%);
+  position: static;
   height: min(1.4vw, 1.4vh);
   width: min(50vw, 50vh);
   background: #1E00FF;
   border-radius: 0.6vw;
   opacity: 1;
   min-width: 30px;
+  margin-left: 4vw;
+  margin-right: 4vw;
   pointer-events: none;
+  flex-shrink: 0;
 }
 
 .hero-word {
