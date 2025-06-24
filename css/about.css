@@ -12,17 +12,20 @@
 }
 
 html, body {
-    height: 100%;
-    overflow: hidden;
-}
-
-body {
+  height: 100%;
   margin: 0;
-  min-height: 100vh;
+  padding: 0;
+  overflow: hidden;
   font-family: 'AkzidenzGrotesk-Regular', Arial, sans-serif;
-  color: #84FF00;
   background: #fff url("../images/background.png") no-repeat center center fixed;
   background-size: cover;
+  color: #EBFF66;
+}
+
+body, .hero-stack, .hero-word, .hero-top, nav, header {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 header {
@@ -32,6 +35,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: transparent;
+  position: relative;
+  z-index: 1;
 }
 
 h1 {
@@ -54,6 +60,7 @@ nav a {
   font-size: 1.8rem;
   letter-spacing: 0.1em;
   font-family: 'AkzidenzGrotesk-Regular', Arial, sans-serif;
+  transition: color 0.2s;
 }
 
 nav a:hover {
@@ -78,12 +85,13 @@ nav a:hover {
 
 .hero-background {
   position: relative;
-  overflow: hidden;
-  min-height: 85vh;
+  min-height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
+  overflow: hidden;
 }
 
 .hero-stack {
@@ -95,6 +103,7 @@ nav a:hover {
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
+  flex: 1;
 }
 
 .hero-top {
@@ -109,31 +118,6 @@ nav a:hover {
   white-space: nowrap;
   margin: 0;
   margin-top: 2vw;
-}
-
-@media (max-width: 900px) {
-  .hero-top,
-  .hero-word {
-    font-size: 18vw;
-    text-align: center;
-  }
-  .hero-row {
-    gap: 2vw;
-  }
-  .hero-left,
-  .hero-right {
-    align-items: center;
-    padding: 0;
-  }
-  .about-columns {
-    flex-direction: column;
-    gap: 4vw;
-    padding: 4vw 4vw 0 4vw;
-    height: auto;
-  }
-  .about-col {
-    font-size: 1rem;
-  }
 }
 
 .about-columns {
@@ -158,16 +142,23 @@ nav a:hover {
   border-radius: 0;
 }
 
-.hero-stack {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+@media (max-width: 900px) {
+  .hero-top, .hero-word {
+    font-size: 18vw;
+    text-align: center;
+  }
+  .about-columns {
+    flex-direction: column;
+    gap: 4vw;
+    padding: 4vw 4vw 0 4vw;
+    height: auto;
+  }
+  .about-col {
+    font-size: 1rem;
+  }
 }
 
-.hero-background {
-  min-height: 100vh;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+header, main {
+  position: relative;
+  z-index: 1;
 }
