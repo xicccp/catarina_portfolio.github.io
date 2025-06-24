@@ -139,6 +139,14 @@ nav a.active {
   margin-bottom: 0;
 }
 
+/* Torna todo o texto não selecionável */
+body, header, nav, main, section, h1, h2, h3, h4, h5, h6, p, a, .project-item {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
 @media (max-width: 900px) {
   header {
     flex-direction: column;
