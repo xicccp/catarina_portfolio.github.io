@@ -154,23 +154,25 @@ nav a:hover {
 .hero-right {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  padding-right: 4vw;
-  gap: 0;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-right: 0;
+  width: 100%;
+  position: relative;
 }
 
 .hero-line {
   flex: 1 1 auto;
   height: 10px;
-  color: #1E00FF;
   background: #1E00FF;
-  border-radius: 1px;
+  border-radius: 0.6vw;
   opacity: 1;
-  margin-right: 2vw;
-  margin-left: 4vw;
-  min-width: 200px;
-  max-width: 100%;
+  margin-left: 4vw;      /* começa a 4vw da esquerda */
+  margin-right: 4vw;     /* termina a 4vw antes do PORTFOLIO */
+  max-width: unset;
+  min-width: 30px;
   pointer-events: none;
+  align-self: center;
 }
 
 .hero-word {
@@ -187,6 +189,12 @@ nav a:hover {
 .hero-word.italic {
   font-family: 'AkzidenzGrotesk-Italic', Arial, sans-serif;
   font-style: italic;
+  font-size: 12vw;
+  color: #1E00FF;
+  white-space: nowrap;
+  line-height: 0.9;
+  margin: 0;
+  margin-right: 4vw;    /* Garante 4vw da margem direita */
 }
 
 @media (max-width: 900px) {
@@ -204,9 +212,13 @@ nav a:hover {
     padding: 0;
   }
   .hero-line {
+    width: 60vw;
+    height: 2vw;
     margin: 2vw 0;
-    min-width: 80vw;
-    width: 80vw;
+  }
+  .hero-word.italic {
+    font-size: 18vw;
+    text-align: center;
   }
 }
 
