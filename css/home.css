@@ -56,7 +56,7 @@ nav a {
   text-decoration: none;
   color: #1E00FF;
   font-weight: 300;
-  font-size: 1.8rem;
+  font-size: min(3vw, 3vh);
   letter-spacing: 0.1em;
   font-family: 'AkzidenzGrotesk-Regular', Arial, sans-serif;
   transition: color 0.2s;
@@ -124,7 +124,7 @@ nav a:hover {
 .hero-top {
   text-align: left;
   padding-left: 4vw;
-  font-size: 12vw;
+  font-size: min(24vw, 24vh);
   font-family: 'AkzidenzGrotesk-Regular', Arial, sans-serif;
   font-weight: 300;
   letter-spacing: 0em;
@@ -162,21 +162,22 @@ nav a:hover {
 }
 
 .hero-line {
-  flex: 1 1 auto;
-  height: 10px;
+  position: absolute;
+  left: 4vw;
+  right: calc(4vw + 100% - 4vw - min(50vw, 50vh) - 4vw); /* Garante que termina antes do PORTFOLIO */
+  top: 50%;
+  transform: translateY(-50%);
+  height: min(1.4vw, 1.4vh);
+  width: min(50vw, 50vh);
   background: #1E00FF;
   border-radius: 0.6vw;
   opacity: 1;
-  margin-left: 4vw;      /* começa a 4vw da esquerda */
-  margin-right: 4vw;     /* termina a 4vw antes do PORTFOLIO */
-  max-width: unset;
   min-width: 30px;
   pointer-events: none;
-  align-self: center;
 }
 
 .hero-word {
-  font-size: 12vw;
+  font-size: min(24vh, 24vw);
   font-family: 'AkzidenzGrotesk-Regular', Arial, sans-serif;
   font-weight: 300;
   letter-spacing: 0em;
@@ -189,17 +190,14 @@ nav a:hover {
 .hero-word.italic {
   font-family: 'AkzidenzGrotesk-Italic', Arial, sans-serif;
   font-style: italic;
-  font-size: 12vw;
-  color: #1E00FF;
-  white-space: nowrap;
-  line-height: 0.9;
-  margin: 0;
-  margin-right: 4vw;    /* Garante 4vw da margem direita */
+  margin-right: 4vw;
 }
 
 @media (max-width: 900px) {
-  .hero-top, .hero-word {
-    font-size: 18vw;
+  .hero-top,
+  .hero-word,
+  .hero-word.italic {
+    font-size: min(12vh, 14vw);
     text-align: center;
   }
   .hero-row {
@@ -213,12 +211,11 @@ nav a:hover {
   }
   .hero-line {
     width: 60vw;
-    height: 2vw;
+    height: min(0.7vw, 0.7vh);
     margin: 2vw 0;
   }
   .hero-word.italic {
-    font-size: 18vw;
-    text-align: center;
+    margin-right: 0;
   }
 }
 
