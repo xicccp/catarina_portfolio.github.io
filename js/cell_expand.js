@@ -60,3 +60,35 @@ function setupCellExpand(gridSelector) {
 }
 
 setupCellExpand('.project-grid');
+
+document.querySelectorAll('.project-cell img').forEach(img => {
+  img.addEventListener('click', function(e) {
+    e.stopPropagation();
+    const overlay = document.getElementById('lightbox-overlay');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = this.src;
+    overlay.style.display = 'flex';
+    document.body.classList.add('lightbox-open');
+  });
+});
+
+document.getElementById('lightbox-overlay').addEventListener('click', function(e) {
+  if (e.target === this) {
+    this.style.display = 'none';
+    document.body.classList.remove('lightbox-open');
+  }
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    const overlay = document.getElementById('lightbox-overlay');
+    overlay.style.display = 'none';
+    document.body.classList.remove('lightbox-open');
+  }
+});
+
+document.getElementById('lightbox-close').addEventListener('click', function() {
+  const overlay = document.getElementById('lightbox-overlay');
+  overlay.style.display = 'none';
+  document.body.classList.remove('lightbox-open');
+});
