@@ -162,6 +162,14 @@ nav a:hover {
   background: #111;
   object-fit: contain;
 }
+#lightbox-video {
+  max-width: 90vw;
+  max-height: 90vh;
+  background: #111;
+  display: block !important;
+  opacity: 1 !important;
+  z-index: 10002 !important;
+}
 body.lightbox-open .project-page {
   filter: blur(8px);
   pointer-events: none;
