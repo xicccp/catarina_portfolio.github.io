@@ -170,6 +170,9 @@ nav a:hover {
   opacity: 1 !important;
   z-index: 10002 !important;
 }
+#lightbox-video[src=""] {
+  display: none !important;
+}
 body.lightbox-open .project-page {
   filter: blur(8px);
   pointer-events: none;

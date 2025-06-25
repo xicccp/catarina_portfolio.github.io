@@ -83,6 +83,17 @@ document.querySelectorAll('.project-cell img, .project-cell video').forEach(medi
 
     // Se for imagem
     if (this.tagName === 'IMG') {
+      // Esconde e limpa o vídeo da lightbox
+      lightboxVideo.pause();
+      lightboxVideo.removeAttribute('src');
+      lightboxVideo.load();
+      // Força a esconder mesmo se o CSS tentar mostrar
+      lightboxVideo.style.display = 'none';
+      lightboxVideo.src = '';
+      // Remove poster se existir
+      lightboxVideo.removeAttribute('poster');
+
+      // Mostra a imagem normalmente
       lightboxImg.src = this.src;
       lightboxImg.style.display = '';
     }
