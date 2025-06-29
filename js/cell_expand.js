@@ -76,6 +76,8 @@ document.querySelectorAll('.project-cell img, .project-cell video').forEach(medi
     const overlay = document.getElementById('lightbox-overlay');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxVideo = document.getElementById('lightbox-video');
+    const lightboxDescription = document.getElementById('lightbox-description');
+    lightboxDescription.style.display = 'none';
 
     // Hide both by default
     lightboxImg.style.display = 'none';
@@ -122,6 +124,15 @@ document.querySelectorAll('.project-cell img, .project-cell video').forEach(medi
       setTimeout(() => {
         console.log('Lightbox video display:', lightboxVideo.style.display, 'src:', lightboxVideo.src, 'currentTime:', lightboxVideo.currentTime);
       }, 500);
+    }
+
+    // Try to get description from data attribute
+    let desc = this.getAttribute('data-description');
+    if (desc) {
+      lightboxDescription.textContent = desc;
+      lightboxDescription.style.display = 'block';
+    } else {
+      lightboxDescription.style.display = 'none';
     }
 
     overlay.style.display = 'flex';
