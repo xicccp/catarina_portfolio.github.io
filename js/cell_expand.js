@@ -24,8 +24,6 @@ function setupCellExpand(gridSelector) {
         grid.style.gridTemplateColumns = colSizes.join(' ');
         grid.style.gridTemplateRows = rowSizes.join(' ');
 
-        // --- Fix: Resume video playback if present ---
-        // --- Fix: Resume video playback if present ---
         const vid = cell.querySelector('video');
         if (vid && !vid.paused) {
           const currentTime = vid.currentTime;
@@ -57,7 +55,6 @@ function setupCellExpand(gridSelector) {
         }
       });
     });
-    // Fecha expansão ao clicar fora no mobile
     document.addEventListener('click', function(e) {
       if (window.innerWidth <= 900 && !grid.contains(e.target)) {
         cells.forEach(c => c.classList.remove('expanded'));
@@ -72,58 +69,49 @@ setupCellExpand('.project-grid');
 
 document.querySelectorAll('.project-cell img, .project-cell video').forEach(media => {
   media.addEventListener('click', function(e) {
-    e.stopPropagation();
+    // Pausa todos os vídeos das grids
+    document.querySelectorAll('.project-cell video').forEach(v => v.pause());
+
     const overlay = document.getElementById('lightbox-overlay');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxVideo = document.getElementById('lightbox-video');
     const lightboxDescription = document.getElementById('lightbox-description');
     lightboxDescription.style.display = 'none';
 
-    // Hide both by default
     lightboxImg.style.display = 'none';
     lightboxVideo.style.display = 'none';
 
-    // Se for imagem
     if (this.tagName === 'IMG') {
-      // Esconde e limpa o vídeo da lightbox
       lightboxVideo.pause();
       lightboxVideo.removeAttribute('src');
       lightboxVideo.load();
-      // Força a esconder mesmo se o CSS tentar mostrar
       lightboxVideo.style.display = 'none';
       lightboxVideo.src = '';
-      // Remove poster se existir
       lightboxVideo.removeAttribute('poster');
 
       // Mostra a imagem normalmente
       lightboxImg.src = this.src;
       lightboxImg.style.display = '';
     }
-    // Se for vídeo
     else if (this.tagName === 'VIDEO') {
-      // Pausa o vídeo da grid
+      // Pause e reseta o vídeo da grid
       this.pause();
+      // Opcional: remove src do vídeo da grid para browsers teimosos
+      // this.src = "";
 
-      // Prepara o vídeo da lightbox
+      // Reseta e prepara o vídeo do lightbox
       lightboxVideo.pause();
+      lightboxVideo.removeAttribute('src');
+      lightboxVideo.load();
       lightboxVideo.src = this.currentSrc || this.src;
-      lightboxVideo.currentTime = this.currentTime || 0;
+      lightboxVideo.currentTime = 0;
       lightboxVideo.muted = false;
       lightboxVideo.controls = true;
       lightboxVideo.style.display = '';
       lightboxVideo.load();
       lightboxVideo.onloadeddata = function() {
-        console.log('Lightbox video loaded, attempting to play');
-        lightboxVideo.play().then(() => {
-          console.log('Lightbox video is playing');
-        }).catch(err => {
-          console.warn('Lightbox video play error:', err);
-        });
+        lightboxVideo.play();
       };
-      // DEBUG extra
-      setTimeout(() => {
-        console.log('Lightbox video display:', lightboxVideo.style.display, 'src:', lightboxVideo.src, 'currentTime:', lightboxVideo.currentTime);
-      }, 500);
     }
 
     // Try to get description from data attribute
@@ -140,7 +128,6 @@ document.querySelectorAll('.project-cell img, .project-cell video').forEach(medi
     console.log('Lightbox opened');
   });
 
-  // Garante que o vídeo da grid está sempre muted e a tocar
   if (media.tagName === 'VIDEO') {
     media.muted = true;
     media.autoplay = true;
@@ -149,7 +136,6 @@ document.querySelectorAll('.project-cell img, .project-cell video').forEach(medi
   }
 });
 
-// Ensure grid videos always loop (for browsers that don't respect loop)
 document.querySelectorAll('.project-cell video').forEach(video => {
   video.addEventListener('ended', function() {
     console.log('Grid video ended, looping');
@@ -192,3 +178,6 @@ document.addEventListener('keydown', function(e) {
     closeLightbox();
   }
 });
+
+// Pause all grid videos when opening the lightbox
+document.querySelectorAll('.project-cell video').forEach(v => v.pause());
