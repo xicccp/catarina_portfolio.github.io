@@ -188,9 +188,6 @@ nav a:hover {
   max-height: 90vh;
   overflow-y: auto;
   color: #fff;
-  background: #181818e6;
-  border-radius: 0.7vw;
-  box-shadow: 0 4px 16px #0006;
   padding: 2vw 1.5vw;
   font-size: 1.1rem;
   font-family: 'AkzidenzGrotesk-Regular', Arial, sans-serif;
