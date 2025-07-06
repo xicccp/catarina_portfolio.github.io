@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>Projects | Portfolio</title>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/projects.css">
@@ -19,78 +19,322 @@
     <!-- Página 1 -->
     <section class="project-page">
       <div class="project-grid">
-        <div class="project-cell"><video src="videos/compressed_introkyrt.mp4" autoplay loop playsinline muted width="100%" height="100%" poster="images/background.png"></video></div>
         <div class="project-cell">
-          <img src="images/imagens meat1.png" alt="12" loading = "lazy" data-description="This is a test description for
-           Meat 1 project. You can put any text here to describe your project.">
+          <video 
+            src="videos/compressed_introkyrt.mp4" 
+            autoplay 
+            loop 
+            playsinline 
+            muted 
+            preload="metadata"
+            poster="images/background.png"
+            onloadstart="this.muted=true"
+            oncanplay="this.muted=true">
+            <source src="videos/compressed_introkyrt.mp4" type="video/mp4">
+            <img src="images/background.png" alt="Video fallback">
+          </video>
         </div>
-        <div class="project-cell"><img src="images/background.png" alt="12" loading = "lazy"></div>
-        <div class="project-cell"><video src="videos/compressed_instalacao.mp4" autoplay loop playsinline width="100%" height="100%"></video></div>
+        <div class="project-cell">
+          <img src="images/imagens meat1.png" alt="Meat 1 project" loading="lazy" 
+               data-description="This is a test description for Meat 1 project. You can put any text here to describe your project.">
+        </div>
+        <div class="project-cell">
+          <img src="images/background.png" alt="Background image" loading="lazy">
+        </div>
+        <div class="project-cell">
+          <video 
+            src="videos/compressed_instalacao.mp4" 
+            autoplay 
+            loop 
+            playsinline 
+            muted 
+            preload="metadata"
+            onloadstart="this.muted=true"
+            oncanplay="this.muted=true">
+            <source src="videos/compressed_instalacao.mp4" type="video/mp4">
+            <img src="images/background.png" alt="Video fallback">
+          </video>
+        </div>
       </div>
       <div class="project-grid">
-        <div class="project-cell"><video src="videos/coracao.mp4" autoplay loop playsinline width="100%" height="100%"></video></div>
-        <div class="project-cell"><video src="videos/fiminstalacao3.mp4" autoplay loop playsinline width="100%" height="100%"></video></div>
-        <div class="project-cell"><video src="videos/cartaz1.mp4" autoplay loop playsinline width="100%" height="100%"></video></div>
-        <div class="project-cell"><img src="images/imagens meat6.png" alt="11" loading = "lazy"></div>
+        <div class="project-cell">
+          <video 
+            src="videos/coracao.mp4" 
+            autoplay 
+            loop 
+            playsinline 
+            muted 
+            preload="metadata"
+            onloadstart="this.muted=true"
+            oncanplay="this.muted=true">
+            <source src="videos/coracao.mp4" type="video/mp4">
+            <img src="images/background.png" alt="Video fallback">
+          </video>
+        </div>
+        <div class="project-cell">
+          <video 
+            src="videos/fiminstalacao3.mp4" 
+            autoplay 
+            loop 
+            playsinline 
+            muted 
+            preload="metadata"
+            onloadstart="this.muted=true"
+            oncanplay="this.muted=true">
+            <source src="videos/fiminstalacao3.mp4" type="video/mp4">
+            <img src="images/background.png" alt="Video fallback">
+          </video>
+        </div>
+        <div class="project-cell">
+          <video 
+            src="videos/cartaz1.mp4" 
+            autoplay 
+            loop 
+            playsinline 
+            muted 
+            preload="metadata"
+            onloadstart="this.muted=true"
+            oncanplay="this.muted=true">
+            <source src="videos/cartaz1.mp4" type="video/mp4">
+            <img src="images/background.png" alt="Video fallback">
+          </video>
+        </div>
+        <div class="project-cell">
+          <img src="images/imagens meat6.png" alt="Meat 6 project" loading="lazy">
+        </div>
       </div>
     </section>
     <!-- Página 2 -->
     <section class="project-page">
       <div class="project-grid">
-        <div class="project-cell"><video src="videos/livro.mp4" autoplay loop playsinline width="100%" height="100%"></div>
-        <div class="project-cell"><video src="videos/livro360.mov" autoplay loop playsinline width="100%" height="100%"></video></div>
-        <div class="project-cell"><video src="videos/alternativa1.mp4" autoplay loop playsinline width="100%" height="100%"></video></div>
-        <div class="project-cell"><video src="videos/alternativa2.mp4" autoplay loop playsinline width="100%" height="100%"></video></div>
+        <div class="project-cell">
+          <video 
+            src="videos/livro.mp4" 
+            autoplay 
+            loop 
+            playsinline 
+            muted 
+            preload="metadata"
+            onloadstart="this.muted=true"
+            oncanplay="this.muted=true">
+            <source src="videos/livro.mp4" type="video/mp4">
+            <img src="images/background.png" alt="Video fallback">
+          </video>
+        </div>
+        <div class="project-cell">
+          <video 
+            src="videos/livro360.mov" 
+            autoplay 
+            loop 
+            playsinline 
+            muted 
+            preload="metadata"
+            onloadstart="this.muted=true"
+            oncanplay="this.muted=true">
+            <source src="videos/livro360.mov" type="video/quicktime">
+            <source src="videos/livro360.mp4" type="video/mp4">
+            <img src="images/background.png" alt="Video fallback">
+          </video>
+        </div>
+        <div class="project-cell">
+          <video 
+            src="videos/alternativa1.mp4" 
+            autoplay 
+            loop 
+            playsinline 
+            muted 
+            preload="metadata"
+            onloadstart="this.muted=true"
+            oncanplay="this.muted=true">
+            <source src="videos/alternativa1.mp4" type="video/mp4">
+            <img src="images/background.png" alt="Video fallback">
+          </video>
+        </div>
+        <div class="project-cell">
+          <video 
+            src="videos/alternativa2.mp4" 
+            autoplay 
+            loop 
+            playsinline 
+            muted 
+            preload="metadata"
+            onloadstart="this.muted=true"
+            oncanplay="this.muted=true">
+            <source src="videos/alternativa2.mp4" type="video/mp4">
+            <img src="images/background.png" alt="Video fallback">
+          </video>
+        </div>
       </div>
       <div class="project-grid">
-        <div class="project-cell"><img src="images/amaromanta1.png" alt="13"></div>
-        <div class="project-cell"><video src="videos/amafinal.mp4" autoplay loop playsinline width="100%" height="100%"></video></div>
-        <div class="project-cell"><img src="images/bac.png" alt="11"></div>
-        <div class="project-cell"><video src="videos/cover1.mp4" autoplay loop playsinline width="100%" height="100%"></video></div>
+        <div class="project-cell">
+          <img src="images/amaromanta1.png" alt="Amaro manta project" loading="lazy">
+        </div>
+        <div class="project-cell">
+          <video 
+            src="videos/amafinal.mp4" 
+            autoplay 
+            loop 
+            playsinline 
+            muted 
+            preload="metadata"
+            onloadstart="this.muted=true"
+            oncanplay="this.muted=true">
+            <source src="videos/amafinal.mp4" type="video/mp4">
+            <img src="images/background.png" alt="Video fallback">
+          </video>
+        </div>
+        <div class="project-cell">
+          <img src="images/bac.png" alt="BAC project" loading="lazy">
+        </div>
+        <div class="project-cell">
+          <video 
+            src="videos/cover1.mp4" 
+            autoplay 
+            loop 
+            playsinline 
+            muted 
+            preload="metadata"
+            onloadstart="this.muted=true"
+            oncanplay="this.muted=true">
+            <source src="videos/cover1.mp4" type="video/mp4">
+            <img src="images/background.png" alt="Video fallback">
+          </video>
+        </div>
       </div>
     </section>
     <!-- Página 3 -->
     <section class="project-page">
       <div class="project-grid">
-        <div class="project-cell"><video src="videos/cover2.mp4" autoplay loop playsinline width="100%" height="100%"></video></div>
-        <div class="project-cell"><img src="images/alternativacover.png" alt="stub"></div>
-        <div class="project-cell"><img src="images/bac.png" alt="stub"></div>
-        <div class="project-cell"><video src="videos/secador2.mp4" autoplay loop playsinline width="100%" height="100%"></video></div>
+        <div class="project-cell">
+          <video 
+            src="videos/cover2.mp4" 
+            autoplay 
+            loop 
+            playsinline 
+            muted 
+            preload="metadata"
+            onloadstart="this.muted=true"
+            oncanplay="this.muted=true">
+            <source src="videos/cover2.mp4" type="video/mp4">
+            <img src="images/background.png" alt="Video fallback">
+          </video>
+        </div>
+        <div class="project-cell">
+          <img src="images/alternativacover.png" alt="Alternative cover" loading="lazy">
+        </div>
+        <div class="project-cell">
+          <img src="images/bac.png" alt="BAC project" loading="lazy">
+        </div>
+        <div class="project-cell">
+          <video 
+            src="videos/secador2.mp4" 
+            autoplay 
+            loop 
+            playsinline 
+            muted 
+            preload="metadata"
+            onloadstart="this.muted=true"
+            oncanplay="this.muted=true">
+            <source src="videos/secador2.mp4" type="video/mp4">
+            <img src="images/background.png" alt="Video fallback">
+          </video>
+        </div>
       </div>
       <div class="project-grid">
-        <div class="project-cell"><img src="images/fanzinebizarro.png" alt="stub" loading = "lazy"></div>
-        <div class="project-cell"><video src="videos/fanzine1.mp4" autoplay loop playsinline width="100%" height="100%"></video></div>
-        <div class="project-cell"><video src="videos/process.mov" autoplay loop playsinline width="100%" height="100%"></video></div>
-        <div class="project-cell"><video src="videos/secador1.mp4" autoplay loop playsinline width="100%" height="100%"></video></div>
+        <div class="project-cell">
+          <img src="images/fanzinebizarro.png" alt="Fanzine bizarro" loading="lazy">
+        </div>
+        <div class="project-cell">
+          <video 
+            src="videos/fanzine1.mp4" 
+            autoplay 
+            loop 
+            playsinline 
+            muted 
+            preload="metadata"
+            onloadstart="this.muted=true"
+            oncanplay="this.muted=true">
+            <source src="videos/fanzine1.mp4" type="video/mp4">
+            <img src="images/background.png" alt="Video fallback">
+          </video>
+        </div>
+        <div class="project-cell">
+          <img src="images/background.png" alt="Background image" loading="lazy">
+        </div>
+        <div class="project-cell">
+          <video 
+            src="videos/secador1.mp4" 
+            autoplay 
+            loop 
+            playsinline 
+            muted 
+            preload="metadata"
+            onloadstart="this.muted=true"
+            oncanplay="this.muted=true">
+            <source src="videos/secador1.mp4" type="video/mp4">
+            <img src="images/background.png" alt="Video fallback">
+          </video>
+        </div>
       </div>
     </section>
     <!-- Página 4 -->
     <section class="project-page">
       <div class="project-grid">
-        <div class="project-cell"><img src="images/noiva1.jpg" alt="stub" loading = "lazy"></div>
-        <div class="project-cell"><img src="images/noiva3.jpg" alt="stub" loading = "lazy"></div>
-        <div class="project-cell"><img src="images/noiva5.jpg" alt="stub" loading = "lazy"></div>
-        <div class="project-cell"><img src="images/noiva6.jpg" alt="stub" loading = "lazy"></div>
+        <div class="project-cell">
+          <img src="images/noiva1.jpg" alt="Noiva project 1" loading="lazy">
+        </div>
+        <div class="project-cell">
+          <img src="images/noiva3.jpg" alt="Noiva project 3" loading="lazy">
+        </div>
+        <div class="project-cell">
+          <img src="images/noiva5.jpg" alt="Noiva project 5" loading="lazy">
+        </div>
+        <div class="project-cell">
+          <img src="images/noiva6.jpg" alt="Noiva project 6" loading="lazy">
+        </div>
       </div>
       <div class="project-grid">
-        <div class="project-cell"><img src="images/economato2.png" alt="stub" loading = "lazy"></div>
-        <div class="project-cell"><img src="images/background.png" alt="stub" loading = "lazy"></div>
-        <div class="project-cell"><img src="images/ima.png" alt="stub" loading = "lazy"></div>
-        <div class="project-cell"><video src="videos/LOG.mp4" autoplay loop playsinline width="100%" height="100%"></video></div>
+        <div class="project-cell">
+          <img src="images/economato2.png" alt="Economato project" loading="lazy">
+        </div>
+        <div class="project-cell">
+          <img src="images/background.png" alt="Background image" loading="lazy">
+        </div>
+        <div class="project-cell">
+          <img src="images/ima.png" alt="IMA project" loading="lazy">
+        </div>
+        <div class="project-cell">
+          <video 
+            src="videos/LOG.mp4" 
+            autoplay 
+            loop 
+            playsinline 
+            muted 
+            preload="metadata"
+            onloadstart="this.muted=true"
+            oncanplay="this.muted=true">
+            <source src="videos/LOG.mp4" type="video/mp4">
+            <img src="images/background.png" alt="Video fallback">
+          </video>
+        </div>
       </div>
     </section>
   </main>
+  
   <!-- Lightbox overlay -->
-<div id="lightbox-overlay" style="display: none;">
-  <button id="lightbox-close" aria-label="Close">&times;</button>
-  <div id="lightbox-content">
-    <div id="lightbox-media">
-      <img id="lightbox-img" src="" alt="">
-      <video id="lightbox-video" controls  max-width:90vw; max-height:90vh; background:#111;"></video>
+  <div id="lightbox-overlay" style="display: none;">
+    <button id="lightbox-close" aria-label="Close">&times;</button>
+    <div id="lightbox-content">
+      <div id="lightbox-media">
+        <img id="lightbox-img" src="" alt="">
+        <video id="lightbox-video" controls preload="metadata" playsinline></video>
+      </div>
+      <div id="lightbox-description"></div>
     </div>
-    <div id="lightbox-description"></div>
   </div>
-</div>
+  
+  <scripts src="js/mobile_projects.js"></script>
   <script src="js/cell_expand.js"></script>
   <script src="js/project-optimizer.js"></script>
+</body>
 </html>
