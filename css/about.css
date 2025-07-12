@@ -10,7 +10,6 @@
   font-weight: normal;
   font-style: italic;
 }
-
 html, body {
   height: 100%;
   margin: 0;
@@ -20,13 +19,11 @@ html, body {
   background: none !important;
   color: #EBFF66;
 }
-
 body, .hero-stack, .hero-word, .hero-top, nav, header {
   user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
 }
-
 header {
   position: fixed;
   top: 0;
@@ -40,12 +37,10 @@ header {
   align-items: center;
   padding: 2rem 4vw 1rem 4vw;
 }
-
 h1 {
   margin: 0;
   font-size: 2.5rem;
 }
-
 nav {
   width: 100%;
   display: flex;
@@ -54,26 +49,22 @@ nav {
   padding: 0 2vw;
   background: none !important;
 }
-
 nav a {
   text-decoration: none;
-  color: #EBFF66;
+  color: #E8FF3A;
   font-weight: 300;
   font-size: min(3vw, 3vh);
   letter-spacing: 0.1em;
   font-family: 'AkzidenzGrotesk-Regular', Arial, sans-serif;
   transition: color 0.2s;
 }
-
 nav a:hover {
   color: #fff;
 }
-
 nav a.active {
   border-bottom: 2px solid currentColor;
   padding-bottom: 0.2em;
 }
-
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -82,14 +73,12 @@ nav a.active {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .gallery img,
 .gallery iframe {
   width: 100%;
   display: block;
   border-radius: 4px;
 }
-
 .bg-video {
   position: fixed;
   top: 0;
@@ -106,73 +95,85 @@ nav a.active {
   width: 100vw;
   overflow: hidden;
 }
-
 .hero-stack {
   position: relative;
   z-index: 1;
   width: 100vw;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
+  display: grid;
+  grid-template-rows: auto 1fr;
   flex: 1;
   padding-top: 5.45rem;
 }
-
 .hero-top {
   text-align: left;
-  padding-left: 4vw;
   font-size: min(24vw, 24vh);
   font-family: 'AkzidenzGrotesk-Regular', Arial, sans-serif;
   font-weight: 300;
   letter-spacing: 0em;
-  color: #EBFF66;
+  color: #E8FF3A;
   line-height: 0.9;
   white-space: nowrap;
   margin: 0;
   margin-top: 2vw;
+  text-indent: 4vw;
 }
-
 .about-columns {
   display: flex;
   flex-direction: row;
   gap: 3vw;
-  padding: 4vw 8vw 0 8vw;
   height: 100%;
-  flex: 1;
+  margin-top: 2vw;
+  padding-left: 4vw;
 }
-
 .about-col {
   flex: 1 1 0;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
   font-size: min(2vw, 2vh);
-  color: #EBFF66;
+  color: #E8FF3A;
   min-width: 0;
   background: none;
   padding: 0;
   border-radius: 0;
 }
 
+.contacts{
+  line-height: 1.4;
+}
+
+.phone {
+  display: block;
+  height: 4px;
+}
+
 @media (max-width: 900px) {
   .hero-top, .hero-word {
     font-size: 18vw;
     text-align: center;
+    text-indent: 0;
   }
   .about-columns {
     flex-direction: column;
     gap: 4vw;
-    padding: 4vw 4vw 0 4vw;
+    margin: 4vw;
     height: auto;
+    text-indent: 0;
   }
   .about-col {
     font-size: 1rem;
   }
+  header {
+    padding: 1rem 4vw;
+  }
+  nav {
+    padding: 0;
+  }
+  nav a {
+    font-size: 1rem;
+  }
 }
-
-/* Remove 'header' daqui! */
 main, .hero-stack, .hero-background {
   position: relative;
   z-index: 1;
