@@ -149,11 +149,74 @@ nav a.active {
 }
 
 @media (max-width: 900px) {
-  .hero-top, .hero-word {
-    font-size: 18vw;
-    text-align: center;
-    text-indent: 0;
+  html, body {
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
   }
+
+  header {
+    flex-direction: row;
+    align-items: center;
+    padding: 1.5rem 4vw 1rem 4vw;
+    gap: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 2vw;
+    width: 100%;
+  }
+
+  nav a {
+    font-size: min(6vw, 6vh);
+    padding: 0.2em 0;
+    white-space: nowrap;
+  }
+
+  .hero-top {
+    font-size: min(14vw, 12vh);
+    text-align: left;
+    padding-left: 4vw;
+    margin-top: 2vw;
+    line-height: 0.9;
+    white-space: nowrap;
+  }
+
+  .hero-word,
+  .hero-word.italic {
+    font-size: min(14vw, 12vh);
+    line-height: 0.9;
+    white-space: nowrap;
+    margin: 0;
+  }
+
+  .hero-word.italic {
+    margin-right: 4vw;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 0.2rem;
+    padding: 1rem 2vw;
+    max-width: 1200px;
+  }
+
+  .gallery img,
+  .gallery iframe {
+    border-radius: 4px;
+  }
+
+  /* Page-specific, leave intact */
   .about-columns {
     flex-direction: column;
     gap: 4vw;
@@ -161,16 +224,8 @@ nav a.active {
     height: auto;
     text-indent: 0;
   }
+
   .about-col {
-    font-size: 1rem;
-  }
-  header {
-    padding: 1rem 4vw;
-  }
-  nav {
-    padding: 0;
-  }
-  nav a {
     font-size: 1rem;
   }
 }
