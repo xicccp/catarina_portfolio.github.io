@@ -69,40 +69,29 @@ setupCellExpand('.project-grid');
 
 document.querySelectorAll('.project-cell img, .project-cell video').forEach(media => {
   media.addEventListener('click', function(e) {
-    // Pausa todos os vídeos das grids
+    // Pause all grid videos
     document.querySelectorAll('.project-cell video').forEach(v => v.pause());
 
     const overlay = document.getElementById('lightbox-overlay');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxVideo = document.getElementById('lightbox-video');
     const lightboxDescription = document.getElementById('lightbox-description');
-    lightboxDescription.style.display = 'none';
-
+    
+    // Reset lightbox state
+    lightboxDescription.innerHTML = ''; // Clear previous content
     lightboxImg.style.display = 'none';
     lightboxVideo.style.display = 'none';
 
     if (this.tagName === 'IMG') {
       lightboxVideo.pause();
       lightboxVideo.removeAttribute('src');
-      lightboxVideo.load();
-      lightboxVideo.style.display = 'none';
-      lightboxVideo.src = '';
-      lightboxVideo.removeAttribute('poster');
-
-      // Mostra a imagem normalmente
       lightboxImg.src = this.src;
       lightboxImg.style.display = '';
     }
     else if (this.tagName === 'VIDEO') {
-      // Pause e reseta o vídeo da grid
       this.pause();
-      // Opcional: remove src do vídeo da grid para browsers teimosos
-      // this.src = "";
-
-      // Reseta e prepara o vídeo do lightbox
       lightboxVideo.pause();
       lightboxVideo.removeAttribute('src');
-      lightboxVideo.load();
       lightboxVideo.src = this.currentSrc || this.src;
       lightboxVideo.currentTime = 0;
       lightboxVideo.muted = false;
@@ -114,10 +103,27 @@ document.querySelectorAll('.project-cell img, .project-cell video').forEach(medi
       };
     }
 
-    // Try to get description from data attribute
-    let desc = this.getAttribute('data-description');
-    if (desc) {
-      lightboxDescription.textContent = desc;
+    // Create description content
+    const title = this.dataset.title;
+    const subtitle = this.dataset.subtitle;
+    const description = this.dataset.description;
+
+    if (title || subtitle || description) {
+      let descHTML = '';
+      
+      if (title) {
+        descHTML += `<div class="lightbox-title">${title}</div>`;
+      }
+      
+      if (subtitle) {
+        descHTML += `<div class="lightbox-subtitle">${subtitle}</div>`;
+      }
+      
+      if (description) {
+        descHTML += `<div class="lightbox-description-text">${description}</div>`;
+      }
+      
+      lightboxDescription.innerHTML = descHTML;
       lightboxDescription.style.display = 'block';
     } else {
       lightboxDescription.style.display = 'none';
@@ -125,15 +131,7 @@ document.querySelectorAll('.project-cell img, .project-cell video').forEach(medi
 
     overlay.style.display = 'flex';
     document.body.classList.add('lightbox-open');
-    console.log('Lightbox opened');
   });
-
-  if (media.tagName === 'VIDEO') {
-    media.muted = true;
-    media.autoplay = true;
-    media.loop = true;
-    media.play().catch(() => {});
-  }
 });
 
 document.querySelectorAll('.project-cell video').forEach(video => {
