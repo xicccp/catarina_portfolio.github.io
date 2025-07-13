@@ -27,8 +27,8 @@ if (canvas) {
       // Create a radial gradient for soft edges
       const radius = 70;
       const grad = ctx.createRadialGradient(point.x, point.y, 0, point.x, point.y, radius);
-      grad.addColorStop(0, `rgba(132,255,0,${alpha})`);      // Center: solid
-      grad.addColorStop(0.7, `rgba(132,255,0,${alpha * 0.1})`); // Mid: semi
+      grad.addColorStop(0, `rgba(0,213,255,${alpha})`);         //Center: solid
+      grad.addColorStop(0.7, `rgba(0,213,255,${alpha * 0.1})`); // Mid: semi
       grad.addColorStop(1, `rgba(255,255,255,0)`);             // Edge: transparent
 
       ctx.save();
