@@ -152,12 +152,6 @@ function closeLightbox() {
   lightboxVideo.pause();
   lightboxVideo.currentTime = 0;
   lightboxVideo.muted = true;
-
-  // Volta a dar play a todos os vídeos da grid
-  document.querySelectorAll('.project-cell video').forEach(video => {
-    video.muted = true;
-    video.play().catch(() => {});
-  });
 }
 
 document.getElementById('lightbox-overlay').addEventListener('click', function(e) {
