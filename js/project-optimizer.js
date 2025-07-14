@@ -1,18 +1,30 @@
-function pauseVideosOutOfView() {
-  // Não faz nada se a lightbox estiver aberta
-  if (document.body.classList.contains('lightbox-open')) return;
-
-  document.querySelectorAll('.project-cell video').forEach(video => {
-    const rect = video.getBoundingClientRect();
-    const inView = rect.bottom > 0 && rect.top < window.innerHeight;
-    if (!inView && !video.paused) {
+document.addEventListener('DOMContentLoaded', function() {
+  // Get all video elements
+  const videos = document.querySelectorAll('.grid-video');
+  
+  // For each video
+  videos.forEach(video => {
+    // Pause initially
+    video.pause();
+    
+    // Play on hover
+    video.parentElement.addEventListener('mouseenter', function() {
+      video.play().catch(e => console.log("Video play failed:", e));
+    });
+    
+    // Pause when not hovering
+    video.parentElement.addEventListener('mouseleave', function() {
       video.pause();
-    } else if (inView && video.paused) {
-      video.muted = true;
-      video.play().catch(() => {});
-    }
+      video.currentTime = 0; // Optional: reset to start
+    });
+    
+    // Handle touch devices
+    video.parentElement.addEventListener('touchstart', function() {
+      if (video.paused) {
+        video.play().catch(e => console.log("Video play failed:", e));
+      } else {
+        video.pause();
+      }
+    });
   });
-}
-window.addEventListener('scroll', pauseVideosOutOfView);
-window.addEventListener('resize', pauseVideosOutOfView);
-window.addEventListener('DOMContentLoaded', pauseVideosOutOfView);
+});

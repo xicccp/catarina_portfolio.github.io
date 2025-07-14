@@ -130,6 +130,15 @@ nav a:hover {
   z-index: 2;
 }
 
+.grid-video {
+  transition: opacity 0.3s ease;
+  opacity: 0.8;
+}
+
+.grid-video:hover {
+  opacity: 1;
+}
+
 #lightbox-overlay {
   position: fixed;
   inset: 0;
@@ -294,6 +303,7 @@ nav a:hover {
   .project-cell {
     aspect-ratio: 1 / 1;
   }
+  
 
   #lightbox-overlay {
     padding: 1rem;
